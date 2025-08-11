@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minimum-pipeline"
+version = "0.1.0"
+description = "Data pipeline: extract → classify → clean → split."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Daniel Valdez"}]
+license = {text = "MIT"}
+dependencies = [
+  "pandas>=2.3.1",
+  "numpy>=2.1",
+  "scikit-learn>=1.7.1"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+minimum-pipeline = "minimum_pipeline.cli:main"
